@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"4dbd0d88ff033b23","type":"text","text":"USERS\n\n\t- Email\n\t- Username\n\t- Password\n\t- Date Joined\n","x":-220,"y":-140,"width":250,"height":200},
+		{"id":"b5d302722b094906","type":"text","text":"OPERATION\n\n\n\t- Account (Fk)\n\t- Amount\n\t- Datetime\n\t- Type:\n\t\t- Deposit\n\t\t- Withdraw\n","x":560,"y":-240,"width":250,"height":240},
+		{"id":"ee5677fe27c60677","type":"text","text":"TRANSACTION\n\n\n\t- Sender (Fk) \n\t- Reciever (Fk)\n\t- Amount\n\t- Datetime\n","x":560,"y":100,"width":250,"height":200},
+		{"id":"57bc809c846700b2","type":"text","text":"ACCOUNTS\n\n\t- User (Fk)\n\nmethods:\n\n\t- Bank Statment\n\t- Balance:\n\t\t- set cache\n\t\t- unset cache\n\t\t- calculate","x":120,"y":-220,"width":320,"height":360}
+	],
+	"edges":[
+		{"id":"19f851ec115407b1","fromNode":"57bc809c846700b2","fromSide":"left","toNode":"4dbd0d88ff033b23","toSide":"right"},
+		{"id":"a8f67d75daa5f695","fromNode":"b5d302722b094906","fromSide":"left","toNode":"57bc809c846700b2","toSide":"right"},
+		{"id":"54c7a2bece83338f","fromNode":"ee5677fe27c60677","fromSide":"left","toNode":"57bc809c846700b2","toSide":"right"}
+	]
+}
