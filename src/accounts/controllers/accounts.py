@@ -93,7 +93,7 @@ def reactivate_account(
     if account.active:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Account already active.")
     
-    account.active = False
+    account.active = True
     session.add(account)
     session.commit()
     

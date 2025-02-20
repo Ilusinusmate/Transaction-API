@@ -50,10 +50,7 @@ class ValidationService:
         if sender.balance < amount:
             return False
         
-        if not receiver.active:
-            return False
-        
-        if not sender.active:
+        if (not receiver.active) or (not sender.active):
             return False
         
         return True

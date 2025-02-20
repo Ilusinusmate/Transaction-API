@@ -7,7 +7,7 @@ from transactions.models import Operations
 
 
 class AccountsBase(SQLModel):
-    bank_name: str = Field(min_length=10, max_length=25)
+    bank_name: str = Field(min_length=1, max_length=25)
     
 
 
