@@ -21,7 +21,7 @@ class TransactionRepository:
     
     
     @staticmethod
-    def get_user_recieved_transactions(user: Users, session: Session) -> list[Transactions]:
+    def get_user_transactions(user: Users, session: Session) -> list[Transactions]:
         return session.exec(
             select(Transactions).where(
                 or_(

@@ -5,6 +5,7 @@ router = APIRouter()
 
 routers_list = [
     "transactions.controllers.transactions.router",
+    "transactions.controllers.operations.router",
 ]
 
 for path in routers_list:

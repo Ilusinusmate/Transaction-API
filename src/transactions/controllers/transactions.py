@@ -5,6 +5,8 @@ from sqlmodel import Session
 
 from server.db import get_session
 from server.oauth import get_current_user, Users
+from transactions.models import Transactions
+from transactions.repositories.transactions import TransactionRepository
 from transactions.services.transactions import ValidationService
 from transactions.schemas.transactions import TransferMoneyBetweenAccountsIn
 from transactions.background_taks.transactions import TransactionsBackgroundTasks
@@ -47,3 +49,10 @@ def transfer_money_between_accounts(
     )
 
     return Response(status_code=202)
+
+@router.get("/list", response_model=list[Transactions])
+async def list_transactions(
+    session: Session = Depends(get_session),
+    current_user: Users = Depends(get_current_user),
+):
+    return TransactionRepository.get_user_transactions(current_user, session)

@@ -1,5 +1,7 @@
 from sqlmodel import Session, select
 
+from decimal import Decimal
+
 from accounts.models import Accounts
 from authuser.models import Users
 
@@ -21,3 +23,9 @@ class AccountsRepository:
         return session.exec(
             select(Accounts).where(Accounts.id == account_id).where(Accounts.user_id == user.id)
         ).first()
+    
+    @staticmethod
+    def update_balance(account: Accounts, amount: Decimal, session: Session):
+        account.balance = amount
+        session.add(account)
+        session.commit()

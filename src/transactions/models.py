@@ -29,7 +29,7 @@ class Transactions(SQLModel, table=True):
 class Operations(SQLModel, table=True):
     class OperationType(int, enum.Enum):
         DEPOSIT = 1
-        WITHDRAWAL = 2
+        WITHDRAWL = 2
     
     id: Optional[int] = Field(default=None, primary_key=True)
     amount: Decimal = Field(ge=Decimal('0.01'))
